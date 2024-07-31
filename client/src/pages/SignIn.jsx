@@ -43,8 +43,9 @@ export default function SignIn() {
   };
   return (
     <div className="flex flex-col md:flex-row h-screen">
-      <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
-        <div className="p-8 max-w-md w-full">
+      <div className="w-full md:w-1/2 bg-gray-500 flex items-center justify-center">
+        <div className="p-8 max-w-md w-full bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 border border-gray-700 rounded-lg shadow-md">
+          {" "}
           <h1 className="text-3xl text-center font-semibold mb-7 text-gray-800 ">
             Sign In
           </h1>
@@ -72,7 +73,7 @@ export default function SignIn() {
             <OAuth />
           </form>
           <div className="flex items-center justify-center mt-5">
-            <p className="text-gray-700">Don't have an account?</p>
+            <p className="text-black font-semibold">Don't have an account?</p>
             <Link to="/sign-up">
               <span className="text-gray-800 font-bold text-lg ml-1 hover:text-blue-500">
                 Sign Up

@@ -79,7 +79,7 @@ export default function SignUp() {
           </p>
         </div>
       </div>
-      <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
+      <div className="w-full md:w-1/2 bg-transparent flex items-center justify-center">
         <div className="p-8 max-w-md w-full">
           <h1 className="text-3xl text-center font-semibold mb-7 text-gray-800">
             Sign Up
