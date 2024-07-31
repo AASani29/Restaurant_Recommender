@@ -79,9 +79,9 @@ export default function SignUp() {
           </p>
         </div>
       </div>
-      <div className="w-full md:w-1/2 bg-transparent flex items-center justify-center">
-        <div className="p-8 max-w-md w-full">
-          <h1 className="text-3xl text-center font-semibold mb-7 text-gray-800">
+      <div className="w-full md:w-1/2 bg-slate-900 flex items-center justify-center">
+        <div className="p-8 max-w-md w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 border border-slate-900 rounded-lg shadow-md">
+          <h1 className="text-3xl text-center font-semibold mb-7 text-green-500">
             Sign Up
           </h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -89,35 +89,35 @@ export default function SignUp() {
               type="text"
               placeholder="Username"
               id="username"
-              className="bg-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800"
+              className="bg-green-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               onChange={handleChange}
             />
             <input
               type="email"
               placeholder="Email"
               id="email"
-              className="bg-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800"
+              className="bg-green-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               onChange={handleChange}
             />
             <input
               type="password"
               placeholder="Password"
               id="password"
-              className="bg-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800"
+              className="bg-green-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               onChange={handleChange}
             />
             <button
               disabled={loading}
-              className="bg-gray-800 text-white p-3 rounded-lg uppercase hover:bg-gray-900 disabled:opacity-80"
+              className="bg-green-700 text-white p-3 rounded-lg uppercase hover:bg-green-500 disabled:opacity-80"
             >
               {loading ? "Loading..." : "Sign Up"}
             </button>
             <OAuth />
           </form>
           <div className="flex items-center justify-center mt-5">
-            <p className="text-black font-semibold">Have an account?</p>
+            <p className="text-green-100 font-semibold">Have an account?</p>
             <Link to="/sign-in">
-              <span className="text-gray-800 text-3xl font-bold text-lg ml-1 hover:text-blue-400">
+              <span className="text-blue-400 text-3xl font-bold text-lg ml-1 hover:text-green-400">
                 Sign In
               </span>
             </Link>

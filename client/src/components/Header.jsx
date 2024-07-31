@@ -7,7 +7,7 @@ export default function Header() {
     <div className="bg-slate-800 text-white">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/home">
-          <h1 className="font-bold text-white">Auth App</h1>
+          <h1 className="font-bold text-white">Authentication</h1>
         </Link>
         <ul className="flex gap-4">
           {currentUser && (
