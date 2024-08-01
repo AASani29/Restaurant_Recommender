@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
-import peenImage from "../images/peen.jpg";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -41,22 +40,22 @@ export default function SignUp() {
     <div className="flex flex-col md:flex-row h-screen">
       <div className="w-full md:w-1/2 bg-gray-800 flex items-center justify-center relative">
         <img
-          src={peenImage}
+          src="https://e1.pxfuel.com/desktop-wallpaper/949/711/desktop-wallpaper-dark-blue-minimalist-minimalist-dark-blue.jpg"
           alt="Physics Quote"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="text-white text-center p-8 bg-transparent rounded-lg">
           <h2 className="text-2xl italic font-bold mb-4 text-teal-100">
             <span className="text-white inline-block animate-pulse">
-              One never notices what has been done;
+              Hashtag
             </span>
             <br />
             <span className="text-white inline-block animate-pulse">
-              one can only see what remains to be done.
+              Drive-by
             </span>
           </h2>
           <p className="text-lg italic text-white">
-            {Array.from("- Marie Curie").map((char, index) =>
+            {Array.from("- Wade Wilson").map((char, index) =>
               char === " " ? (
                 <span key={index}>&nbsp;</span>
               ) : (
