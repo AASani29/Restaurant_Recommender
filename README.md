@@ -16,3 +16,6 @@
   ```bash
   VITE_FIREBASE_API_KEY = "AIzaSyBgZ6unZvCYpnqGeSCtxdg8KvHPvmY38eU"
   ```
+## Link: 
+deployed with [Render-namisa.najah.raisa@gmail.com{4nG$5047})](render.com)
+[Authentication](https://authentication-2-tzt5.onrender.com/)
