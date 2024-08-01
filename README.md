@@ -1,3 +1,12 @@
+## in the root:
+  ```bash
+  npm install
+  ```
+## in the client:
+  ```bash
+  cd client
+  npm install
+  ```
 ## .env in the root:
   ```bash
   MONGO = 'mongodb+srv://namisa:244466666@auth.d1zmqbi.mongodb.net/?retryWrites=true&w=majority&appName=auth'
