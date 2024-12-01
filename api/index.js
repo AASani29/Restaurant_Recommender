@@ -5,44 +5,65 @@ import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import restaurantRoutes from "./routes/restaurantRoute.js";
+
+
+
+
+// Load environment variables
 dotenv.config();
 
+// Ensure MONGO environment variable is set
+if (!process.env.MONGO) {
+  console.error('Error: MONGO environment variable is not defined.');
+  process.exit(1);
+}
+
+const app = express();
+const __dirname = path.resolve();
+
+// Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO)
+  .connect(process.env.MONGO, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
   .catch((err) => {
-    console.log(err);
+    console.error('Failed to connect to MongoDB:', err.message);
+    process.exit(1); // Exit if the database connection fails
   });
 
-const __dirname = path.resolve();
+// Middleware
 
-const app = express();
+app.use(express.json());
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
-app.use(express.static(path.join(__dirname, '/client/dist')));
+// API routes
+app.use('/api/user', userRoutes);
+app.use('/api/auth', authRoutes);
+app.use("/api/restaurants", restaurantRoutes);
 
+// Catch-all route for serving the client
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 
-app.use(express.json());
-
-app.use(cookieParser());
-
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
-});
-
-app.use('/api/user', userRoutes);
-app.use('/api/auth', authRoutes);
-
+// Error handling middleware
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || 'Internal Server Error';
-  return res.status(statusCode).json({
+  console.error(`Error: ${message} (Status: ${statusCode})`);
+  res.status(statusCode).json({
     success: false,
     message,
-    statusCode,
   });
+});
+
+
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
